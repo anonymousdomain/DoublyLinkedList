@@ -11,5 +11,10 @@ public class DLinkedListTest {
         System.out.println("###############");
         dlist.addToTail("Neba");
         dlist.printList();
+        //dlist.removeFromHead();
+        System.out.println("###############");
+       
+        dlist.removeFromTail();
+        dlist.printList();
     }
 }

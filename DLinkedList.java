@@ -34,7 +34,24 @@ public class DLinkedList {
       node.next = tail;
     }
   }
-
+public void removeFromHead(){
+    if(head==null)return;
+    else{
+        head=head.next;//shift the head to the next node
+        head.prev=null;//detach it from the link
+    }
+}
+public void removeFromTail(){
+    if(head==null)return;
+    else{
+        DLinkedListNode node=head;
+        while(node.next.next!=null){
+            node=node.next;
+            
+        }
+       node.next=null;//detach the last node
+    }
+}
   public void printList() {
     DLinkedListNode node = head; //node starting from head
     while (node != null) {
