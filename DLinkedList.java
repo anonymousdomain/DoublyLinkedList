@@ -20,6 +20,9 @@ public class DLinkedList {
 
   public boolean sreach(String data) {
     DLinkedListNode node = head;
+    if(head == null) {  
+      return false;  
+  } 
     while (node.next!= null && node.data != data){
       node=node.next;
     }
