@@ -26,7 +26,8 @@ public class DLinkedListTest {
     dlist.removeAt(2);
     dlist.removeAt(3);
     dlist.printList();
-
+     System.out.println(dlist.sreach("Devo"));
+     //dlist.sreach("neba");
     System.out.println("size : " + dlist.getSize());
   }
 }

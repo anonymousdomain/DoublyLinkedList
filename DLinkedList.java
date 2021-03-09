@@ -18,8 +18,22 @@ public class DLinkedList {
     return size;
   }
 
+  public boolean sreach(String data) {
+    DLinkedListNode node = head;
+    while (node.next!= null && node.data != data){
+      node=node.next;
+    }
+    if(node.data==data)
+    return true;
+    else return false;
+      
+    }
+  
+  
+  
+
   public void addToHead(String data) {
-    if (head == null) {
+    if (isEmpty()) {
       head = new DLinkedListNode(null, data, null); //prev & next are null
     } else {
       DLinkedListNode node = new DLinkedListNode(null, data, head);
@@ -30,7 +44,7 @@ public class DLinkedList {
   }
 
   public void addToTail(String data) {
-    if (head == null) {
+    if (isEmpty()) {
       head = new DLinkedListNode(null, data, null);
     } else {
       DLinkedListNode node = head; //starting from head
@@ -44,7 +58,7 @@ public class DLinkedList {
   }
 
   public void insertAt(String data, int index) {
-    if (head == tail || index > size) return;
+    if (isEmpty() || index > size) return;
     int i = 0;
     DLinkedListNode node = head;
     while (i < index) {
@@ -52,19 +66,19 @@ public class DLinkedList {
       i++;
     }
     if (node.prev == null) {
-      DLinkedListNode newNode= new DLinkedListNode(null, data, node);
+      DLinkedListNode newNode = new DLinkedListNode(null, data, node);
       node.prev = newNode;
-     head=newNode;
+      head = newNode;
     } else {
-      DLinkedListNode newNode= new DLinkedListNode(node.prev, data, node);
-      node.prev.next=newNode;
-      node.prev=newNode;
+      DLinkedListNode newNode = new DLinkedListNode(node.prev, data, node);
+      node.prev.next = newNode;
+      node.prev = newNode;
     }
     size++;
   }
 
   public void removeFromHead() {
-    if (head == null) return; else {
+    if (isEmpty()) return; else {
       head = head.next; //shift the head to the next node
       head.prev = null; //detach it from the link
     }
@@ -72,7 +86,7 @@ public class DLinkedList {
   }
 
   public void removeFromTail() {
-    if (head == null) return; else {
+    if (isEmpty()) return; else {
       DLinkedListNode node = head;
       while (node.next.next != null) {
         node = node.next;
@@ -83,7 +97,7 @@ public class DLinkedList {
   }
 
   public void removeAt(int index) {
-    if (head == tail || index > size) return;
+    if (isEmpty() || index > size) return;
 
     int i = 0; //list starts from zero
     DLinkedListNode node = head;
@@ -107,7 +121,7 @@ public class DLinkedList {
   public void printList() {
     DLinkedListNode node = head; //node starting from head
     while (node != null) {
-      System.out.print(node.data+" ");
+      System.out.print(node.data + " ");
       node = node.next; //itrate through the list
     }
     System.out.println();
