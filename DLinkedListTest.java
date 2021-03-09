@@ -10,11 +10,17 @@ public class DLinkedListTest {
         //add to tail
         System.out.println("###############");
         dlist.addToTail("Neba");
+        dlist.addToTail("beka");
         dlist.printList();
+        System.out.println("size : "+dlist.getSize());
         //dlist.removeFromHead();
         System.out.println("###############");
        
         dlist.removeFromTail();
+        System.out.println("size : "+dlist.getSize());
+        dlist.removeAt(0);
         dlist.printList();
+
+        System.out.println("size : "+dlist.getSize());
     }
 }
