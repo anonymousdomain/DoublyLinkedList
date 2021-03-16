@@ -43,13 +43,13 @@ public class DLinkedList {
   }
 
   public void addToTail(String data) {
-    DLinkedListNode newnode = new DLinkedListNode(null, data, null);
+    DLinkedListNode newNode = new DLinkedListNode(null, data, null);
     if (isEmpty()) {
       this.head = this.tail = new DLinkedListNode(null, data, null);
     } else {
-      this.tail.next = newnode;
-      newnode.prev = this.tail;
-      this.tail = newnode;
+      this.tail.next = newNode;
+      newNode.prev = this.tail;
+      this.tail = newNode;
       this.tail.next = null;
     }
     size++;
