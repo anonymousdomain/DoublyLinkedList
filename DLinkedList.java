@@ -3,7 +3,7 @@ package DoublyLinkedList;
 public class DLinkedList {
 
   DLinkedListNode head, tail;
-  DLinkedListNode newnode;
+
   int size;
 
   public DLinkedList() {
@@ -43,25 +43,15 @@ public class DLinkedList {
   }
 
   public void addToTail(String data) {
-    newnode = new DLinkedListNode(null, data, null);
+    DLinkedListNode newnode = new DLinkedListNode(null, data, null);
     if (isEmpty()) {
       this.head = this.tail = new DLinkedListNode(null, data, null);
     } else {
-      this.tail.next = this.newnode;
-      this.newnode.prev = this.tail;
-      this.tail = this.newnode;
+      this.tail.next = newnode;
+      newnode.prev = this.tail;
+      this.tail = newnode;
       this.tail.next = null;
     }
-
-    /*
-    {
-      DLinkedListNode node = head; //starting from head
-      while (node.next != null) {
-        node = node.next;
-      }
-      tail = new DLinkedListNode(node, data, null);
-      node.next = tail;
-    }*/
     size++;
   }
 
@@ -97,12 +87,6 @@ public class DLinkedList {
     if (isEmpty()) return; else {
       this.tail.prev.next = null;
       this.tail = this.tail.prev.prev;
-      /*
-      DLinkedListNode node = head;
-      while (node.next.next != null) {
-        node = node.next;
-      }
-      node.next = null; //detach the last node*/
     }
     size--;
   }
