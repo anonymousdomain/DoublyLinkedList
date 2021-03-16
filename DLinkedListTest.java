@@ -6,7 +6,7 @@ public class DLinkedListTest {
     DLinkedList dlist = new DLinkedList();
     //add to head
     dlist.addToHead("Nahom");
-    dlist.addToHead("Devo");
+    dlist.addToHead("devo");
     dlist.printList();
     //add to tail
     System.out.println("###############");
@@ -15,8 +15,8 @@ public class DLinkedListTest {
     dlist.printList();
     System.out.println("size : " + dlist.getSize());
     //add at any index
-    dlist.insertAt("bura",3);
-    dlist.insertAt("nati",2);
+    dlist.insertAt("bura", 3);
+    dlist.insertAt("nati", 2);
     dlist.printList();
     System.out.println("size : " + dlist.getSize());
     System.out.println("###############");
@@ -26,8 +26,8 @@ public class DLinkedListTest {
     dlist.removeAt(2);
     dlist.removeAt(3);
     dlist.printList();
-     System.out.println(dlist.sreach("Devo"));
-     //dlist.sreach("neba");
+    System.out.println(dlist.sreach("devo"));
     System.out.println("size : " + dlist.getSize());
+    System.out.println(dlist.sreach("alicia"));
   }
 }

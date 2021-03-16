@@ -17,8 +17,10 @@ public class DLinkedListNode {
     String data,
     DLinkedListNode next
   ) {
+
     this.prev = prev;
     this.data = data;
     this.next = next;
   }
+  
 }

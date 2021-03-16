@@ -3,60 +3,65 @@ package DoublyLinkedList;
 public class DLinkedList {
 
   DLinkedListNode head, tail;
+  DLinkedListNode newnode;
   int size;
 
   public DLinkedList() {
-    size = 0;
-    head = tail = null;
+    this.size = 0;
+    this.head = this.tail = null;
   }
 
   public boolean isEmpty() {
-    return head == null;
+    return this.head == null;
   }
 
   public int getSize() {
-    return size;
+    return this.size;
   }
 
   public boolean sreach(String data) {
     DLinkedListNode node = head;
-    if(head == null) {  
-      return false;  
-  } 
-    while (node.next!= null && node.data != data){
-      node=node.next;
+    if (this.head == null) {
+      return false;
     }
-    if(node.data==data)
-    return true;
-    else return false;
-      
+    while (node.next != null && node.data != data) {
+      node = node.next;
     }
-  
-  
-  
+    if (node.data.equals(data)) return true; else return false;
+  }
 
   public void addToHead(String data) {
     if (isEmpty()) {
-      head = new DLinkedListNode(null, data, null); //prev & next are null
+      this.head = new DLinkedListNode(null, data, null); //prev & next are null
     } else {
-      DLinkedListNode node = new DLinkedListNode(null, data, head);
-      head.prev = node;
-      head = node; //change head to a new created node
+      DLinkedListNode node = new DLinkedListNode(null, data, this.head);
+      this.head.prev = node;
+      this.head = node; //change head to a new created node
     }
     size++;
+    this.tail = this.head.next;
   }
 
   public void addToTail(String data) {
+    newnode = new DLinkedListNode(null, data, null);
     if (isEmpty()) {
-      head = new DLinkedListNode(null, data, null);
+      this.head = this.tail = new DLinkedListNode(null, data, null);
     } else {
+      this.tail.next = this.newnode;
+      this.newnode.prev = this.tail;
+      this.tail = this.newnode;
+      this.tail.next = null;
+    }
+
+    /*
+    {
       DLinkedListNode node = head; //starting from head
       while (node.next != null) {
         node = node.next;
       }
       tail = new DLinkedListNode(node, data, null);
       node.next = tail;
-    }
+    }*/
     size++;
   }
 
@@ -90,11 +95,14 @@ public class DLinkedList {
 
   public void removeFromTail() {
     if (isEmpty()) return; else {
+      this.tail.prev.next = null;
+      this.tail = this.tail.prev.prev;
+      /*
       DLinkedListNode node = head;
       while (node.next.next != null) {
         node = node.next;
       }
-      node.next = null; //detach the last node
+      node.next = null; //detach the last node*/
     }
     size--;
   }
