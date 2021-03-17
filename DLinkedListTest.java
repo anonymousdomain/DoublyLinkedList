@@ -1,3 +1,11 @@
+/*
+data structure & algorithms  first assignment 
+
+DLinkedListTest source code
+
+Name:Dawit Yitagesu
+ID:DBUR/0311/10
+*/
 package DoublyLinkedList;
 
 public class DLinkedListTest {
