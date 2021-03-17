@@ -70,7 +70,7 @@ public class DLinkedList {
     } else {
       DLinkedListNode newNode = new DLinkedListNode(node.prev, data, node);
       node.prev.next = newNode;
-      node.prev= newNode;
+      node.prev = newNode;
     }
     size++;
   }

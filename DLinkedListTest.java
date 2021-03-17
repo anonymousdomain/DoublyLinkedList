@@ -8,12 +8,14 @@ public class DLinkedListTest {
     dlist.addToHead("Nahom");
     dlist.addToHead("devo");
     dlist.printList();
+
     //add to tail
     System.out.println("###############");
     dlist.addToTail("Neba");
     dlist.addToTail("beka");
     dlist.printList();
     System.out.println("size : " + dlist.getSize());
+
     //add at any index
     dlist.insertAt("bura", 3);
     dlist.insertAt("nati", 2);
@@ -22,6 +24,7 @@ public class DLinkedListTest {
     System.out.println("###############");
     dlist.removeFromTail();
     System.out.println("size : " + dlist.getSize());
+
     //remove from any index
     dlist.removeAt(2);
     dlist.removeAt(3);
